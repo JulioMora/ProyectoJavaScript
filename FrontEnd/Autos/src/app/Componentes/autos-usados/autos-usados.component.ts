@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AutosClass} from "../../Clases/Auto";
 import {Http} from "@angular/http";
 @Component({
@@ -9,6 +9,7 @@ import {Http} from "@angular/http";
 export class AutosUsadosComponent implements OnInit {
 
   autos:AutosClass[] = [];
+  @Input() AutosInput:Pel
 
   constructor(private _http:Http) { }
 
