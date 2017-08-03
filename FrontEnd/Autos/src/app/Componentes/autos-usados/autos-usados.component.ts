@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AutosClass} from "../../Clases/Auto";
 import {Http} from "@angular/http";
+import {AutosEntrada} from "../../Interfaces/AutosEntrada";
 @Component({
   selector: 'app-autos-usados',
   templateUrl: './autos-usados.component.html',
@@ -9,7 +10,8 @@ import {Http} from "@angular/http";
 export class AutosUsadosComponent implements OnInit {
 
   autos:AutosClass[] = [];
-  @Input() AutosInput:Pel
+  @Input() AutosInput: AutosEntrada;
+  autos1: AutosEntrada[] = [];
 
   constructor(private _http:Http) { }
 
@@ -18,15 +20,9 @@ export class AutosUsadosComponent implements OnInit {
       .get("http://localhost:1337/Autos/")
       .subscribe(
         respuesta=>{
-          let rjson:AutosClass[] = respuesta.json();
+          let rjson:AutosEntrada[] = respuesta.json();
 
-          this.autos = rjson.map(
-            (auto:AutosClass)=>{
-              //cambiar el usuario
-              //auto.editar = false;
-              return auto;
-            }
-          );
+          this.autos1 = rjson;
 
           /*
            //anadir propiedades a objetos
@@ -37,7 +33,7 @@ export class AutosUsadosComponent implements OnInit {
            objeto1.prop3 = 3;
            */
 
-          console.log("Autos: ",this.autos);
+          console.log("Autos: ",this.autos1);
         },
         error=>{
           console.log("Error: ",error)

@@ -1,11 +1,24 @@
 <div class="container">
+  <br>
+  <br>
+<div class="row">
+  <div  *ngFor="let auto of autos1;let indice = index;">
+    <div class="col-sm-4" *ngIf="auto.nuevousado">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="{{auto.foto}}" alt="Card image cap">
+        <div class="card-block">
+          <h4  class="card-title">Auto</h4>
 
-<div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+            <p><strong>Marca       :</strong> {{auto.marca}}</p>
+            <p><strong>Modelo      :</strong>{{auto.modelo}}</p>
+            <p><strong>Año         :</strong>{{auto.anio}}</p>
+            <p><strong>Precio      :</strong>{{auto.precio}}</p>
+
+          <a href="#" class="btn btn-primary btn-block">Ir a Perfil</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </div>
