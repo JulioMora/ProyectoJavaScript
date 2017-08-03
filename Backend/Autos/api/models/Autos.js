@@ -31,6 +31,9 @@ module.exports = {
     },
     idAutos:{ //hijo
       model:'usuario'
+    },
+    nuevousado:{
+      type: 'boolean'
     }
   }
 };
