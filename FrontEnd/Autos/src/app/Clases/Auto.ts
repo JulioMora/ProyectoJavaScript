@@ -3,7 +3,7 @@
  */
 export class AutosClass {
 
-  constructor(public marcaz:string,
+  constructor(public marca:string,
               public id?:number,
               public modelo?:string,
               public anio?:string,
@@ -11,7 +11,7 @@ export class AutosClass {
               public foto?:string,
               public createdAt?:Date,
               public updatedAt?:Date,
-              public editar?:boolean){
+              public nuevousado?:boolean){
   }
 
 }

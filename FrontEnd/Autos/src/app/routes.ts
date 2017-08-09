@@ -4,6 +4,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {InicioComponent} from './Componentes/inicio/inicio.component';
 import {AutosUsadosComponent} from './Componentes/autos-usados/autos-usados.component';
 import {AutosNuevosComponent} from './Componentes/autos-nuevos/autos-nuevos.component';
+import {EditarAutoComponent} from "./Componentes/editar-auto/editar-auto.component";
 export const routes: Routes = [
   {
     path: 'inicio',
@@ -12,7 +13,12 @@ export const routes: Routes = [
   },
   {
     path: 'autos-usados',
-    component: AutosUsadosComponent
+    component: AutosUsadosComponent,
+
+
+  },
+  {path:'editarauto/:idAuto',
+    component:EditarAutoComponent,
   },
   {
     path: 'autos-nuevos',

@@ -1,7 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {AutosClass} from "../../Clases/Auto";
 import {Http} from "@angular/http";
 import {AutosEntrada} from "../../Interfaces/AutosEntrada";
+import "rxjs/add/operator/map";
+
 @Component({
   selector: 'app-autos-usados',
   templateUrl: './autos-usados.component.html',
@@ -11,7 +13,9 @@ export class AutosUsadosComponent implements OnInit {
 
   autos:AutosClass[] = [];
   @Input() AutosInput: AutosEntrada;
+  @Output() AutosOutput= new EventEmitter();
   autos1: AutosEntrada[] = [];
+  nuevoAuto:AutosClass=new AutosClass("");
 
   constructor(private _http:Http) { }
 
@@ -41,5 +45,23 @@ export class AutosUsadosComponent implements OnInit {
         }
       )
   }
+  crearUsuario(UsuarioFormulario)
+  {
+    console.log("Entro a crear Usuario");
 
+    console.log(UsuarioFormulario);
+
+    console.log(this.nuevoAuto);
+    this._http.post("http://localhost:1337/autos",this.nuevoAuto).subscribe(respuesta=>{
+        let respuestaJson = respuesta.json();
+        console.log('respuestaJson: ',respuestaJson);
+        this.autos.push(respuestaJson)
+      },
+      error=>{
+        console.log("Error ",error);
+      }
+    )
+    //el subscribe me sirve para los rquest
+
+  }
 }
