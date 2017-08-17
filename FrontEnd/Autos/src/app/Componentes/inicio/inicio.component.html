@@ -21,3 +21,34 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<form (ngSubmit)="crearUsuario(UsuarioFormulario)" #UsuarioFormulario="ngForm" nonvalidate>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-form-label">Nuevo Registro:</label>
+        <input class="form-control" name="marca"
+               placeholder="Ingrese nuevo marca"
+               [(ngModel)]="nuevoAuto.marca" type="text">
+        <input class="form-control" name="modelo"
+               placeholder="Ingrese nuevo modelo"
+               [(ngModel)]="nuevoAuto.modelo" type="text">
+        <input class="form-control" name="anio"
+               placeholder="Ingrese nuevo año"
+               [(ngModel)]="nuevoAuto.anio" type="text">
+        <input class="form-control" name="precio"
+               placeholder="Ingrese nuevo precio"
+               [(ngModel)]="nuevoAuto.precio" type="number">
+        <input class="form-control" name="foto"
+               placeholder="Ingrese una url de foto"
+               [(ngModel)]="nuevoAuto.foto" type="text">
+        <input class="form-control" name="nuevousado"
+               placeholder="Nuevo:False/Usado:True"
+               [(ngModel)]="nuevoAuto.nuevousado" type="text">
+      </div>
+
+      <button class="btn btn-success" [disabled]="!UsuarioFormulario.valid" type="submit">Crear Auto</button>
+
+    </div>
+  </div>
+</form>

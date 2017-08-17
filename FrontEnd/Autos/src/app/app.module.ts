@@ -11,13 +11,15 @@ import {AutosNuevosComponent} from './Componentes/autos-nuevos/autos-nuevos.comp
 import {RoutesAppModules} from './routes';
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
+import { EditarAutoComponent } from './Componentes/editar-auto/editar-auto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     AutosUsadosComponent,
-    AutosNuevosComponent
+    AutosNuevosComponent,
+    EditarAutoComponent
   ],
   imports: [
     BrowserModule,
