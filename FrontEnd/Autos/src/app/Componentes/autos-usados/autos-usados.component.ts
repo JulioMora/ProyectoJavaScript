@@ -45,23 +45,25 @@ export class AutosUsadosComponent implements OnInit {
         }
       )
   }
-  crearUsuario(UsuarioFormulario)
-  {
-    console.log("Entro a crear Usuario");
+  eliminarAutoBackend(auto: AutosEntrada) {
 
-    console.log(UsuarioFormulario);
+    this._http.delete("http://localhost:1337/autos?id="+auto.id)
+      .subscribe(
+        respuesta=>{
+          this.AutosOutput.emit(auto);
+          //this.pelis.splice(this.pelis.indexOf(peli),1)
+        },
+        error=>{
+          console.log("Error",error);
+        }
+      )
 
-    console.log(this.nuevoAuto);
-    this._http.post("http://localhost:1337/autos",this.nuevoAuto).subscribe(respuesta=>{
-        let respuestaJson = respuesta.json();
-        console.log('respuestaJson: ',respuestaJson);
-        this.autos.push(respuestaJson)
-      },
-      error=>{
-        console.log("Error ",error);
-      }
-    )
-    //el subscribe me sirve para los rquest
+  }
+  eliminarAutoFrontEnd(auto: AutosEntrada) {
+
+    let indice = this.autos1.indexOf(auto);
+
+    this.autos1.splice(indice,1);
 
   }
 }
