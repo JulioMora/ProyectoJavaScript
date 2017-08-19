@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="animated bounceIn">
+    <h4>Actualizar Auto </h4>
+
+
+    <div class="form-group">
+      <br>
+      <input class="form-control"
+             placeholder="Actualice la marca"
+             type="text" #AutoLocalMarca
+             id="marca"
+             name="marca">
+      <input class="form-control"
+             placeholder="Actualice el modelo"
+             type="text" #AutoLocalModelo>
+      <input class="form-control"
+             placeholder="Actualice el año"
+             type="text" #AutoLocalAnio>
+      <input class="form-control"
+             placeholder="Actualice el precio"
+             type="number" #AutoLocalPrecio>
+      <input class="form-control"
+             placeholder="Actualice la foto"
+             type="text" #AutoLocalFoto>
+    </div>
+    <button  class="btn btn-primary"
+             (click)="actualizarAuto(AutosInput,AutoLocalMarca.value,AutoLocalModelo.value,AutoLocalAnio.value,AutoLocalPrecio.value,AutoLocalFoto.value)" [routerLink]="['/autos-nuevos']"> Actualizar usuarioLocal</button>
+
+
+
+    <button class="btn btn-warning" [routerLink]="['/inicio']"> Cancelar Edicion</button>
+  </div>
+</div>
+
+
+

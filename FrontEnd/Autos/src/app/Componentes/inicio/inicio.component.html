@@ -1,3 +1,6 @@
+<div class="ContieneTodo">
+
+<div class="container">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner" role="listbox">
@@ -21,12 +24,14 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+</div>
+<div class="container">
 <form (ngSubmit)="crearUsuario(UsuarioFormulario)" #UsuarioFormulario="ngForm" nonvalidate>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
       <div class="form-group">
-        <label class="col-form-label">Nuevo Registro:</label>
+        <label class="col-form-label-lg">Nuevo Registro de Auto</label>
         <input class="form-control" name="marca"
                placeholder="Ingrese nuevo marca"
                [(ngModel)]="nuevoAuto.marca" type="text">
@@ -50,5 +55,8 @@
       <button class="btn btn-success" [disabled]="!UsuarioFormulario.valid" type="submit">Crear Auto</button>
 
     </div>
+    <div class="col-sm-4"></div>
   </div>
 </form>
+</div>
+</div>

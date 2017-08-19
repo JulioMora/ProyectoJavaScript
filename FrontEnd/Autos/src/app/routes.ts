@@ -5,6 +5,7 @@ import {InicioComponent} from './Componentes/inicio/inicio.component';
 import {AutosUsadosComponent} from './Componentes/autos-usados/autos-usados.component';
 import {AutosNuevosComponent} from './Componentes/autos-nuevos/autos-nuevos.component';
 import {EditarAutoComponent} from "./Componentes/editar-auto/editar-auto.component";
+import {EditarAutoNuevoComponent} from "./Componentes/editar-auto-nuevo/editar-auto-nuevo.component";
 export const routes: Routes = [
   {
     path: 'inicio',
@@ -24,6 +25,9 @@ export const routes: Routes = [
     path: 'autos-nuevos',
     component: AutosNuevosComponent,
 
+  },
+  {path:'editarauto-nuevo/:idAuto',
+    component:EditarAutoNuevoComponent,
   },
 
 ];

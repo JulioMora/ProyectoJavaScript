@@ -12,6 +12,7 @@ import {RoutesAppModules} from './routes';
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import { EditarAutoComponent } from './Componentes/editar-auto/editar-auto.component';
+import { EditarAutoNuevoComponent } from './Componentes/editar-auto-nuevo/editar-auto-nuevo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditarAutoComponent } from './Componentes/editar-auto/editar-auto.compo
     InicioComponent,
     AutosUsadosComponent,
     AutosNuevosComponent,
-    EditarAutoComponent
+    EditarAutoComponent,
+    EditarAutoNuevoComponent
   ],
   imports: [
     BrowserModule,
